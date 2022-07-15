@@ -10,6 +10,8 @@ python:
   install:
     - method: pip
       path: .
+numpy:
+  version: 1.23
 
 conda:
   environment: docs/requirements.yaml

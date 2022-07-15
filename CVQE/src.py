@@ -1,5 +1,12 @@
-"""Provide the primary functions."""
+import numpy as np
+
+
 def zen(with_attribution=True):
+    """
+    Provide the primary functions.
+    --------
+
+    """
     quote = """Beautiful is better than ugly.
     Explicit is better than implicit.
     Simple is better than complex.
@@ -47,6 +54,23 @@ def canvas(with_attribution=True):
         quote += "\n\t- Adapted from Henry David Thoreau"
     return quote
 def calculate_distance(rA, rB):
+    """
+    Parameters
+    ----------
+    rA, rB : np.ndarray
+        The coordinates of each point.
+    Returns
+    -------
+    distance : float
+        The distance between the two points.
+    Examples
+    --------
+    >>> r1 = np.array([0, 0, 0])
+    >>> r2 = np.array([0, 0.1, 0])
+    >>> calculate_distance(r1, r2)
+    0.1
+    """
+
     d=(rA-rB)
     dist=np.linalg.norm(d)
     return dist
@@ -88,7 +112,10 @@ def open_xyz(file_location):
 def write_xyz(file_location, symbols, coordinates):
     
     num_atoms = len(symbols)
-    
+   
+    if num_atoms != len(coordinates):
+        raise ValueError(f"write_xyz : the number of symbols ({num_atoms}) and number of coordinates ({len(coordinates)}) must be the same to write xyz file!")
+
     with open(file_location, 'w+') as f:
         f.write('{}\n'.format(num_atoms))
         f.write('XYZ file\n')

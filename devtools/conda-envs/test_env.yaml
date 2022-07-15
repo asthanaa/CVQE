@@ -6,6 +6,9 @@ dependencies:
     # Base depends
   - python
   - pip
+    # Package dependencies
+ - numpy
+ - matplotlib
 
     # Testing
   - pytest

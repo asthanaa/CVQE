@@ -7,8 +7,8 @@ dependencies:
   - python
   - pip
     # Package dependencies
- - numpy
- - matplotlib
+  - numpy
+  - matplotlib
 
     # Testing
   - pytest

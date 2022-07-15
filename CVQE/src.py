@@ -237,6 +237,8 @@ def bond_histogram(bond_list, save_location=None, dpi=300, graph_min=0, graph_ma
 def build_bond_list(coordinates, max_bond=1.5, min_bond=0):
 
     # Find the bonds in a molecule
+    if min_bond < 0:
+        raise ValueError("Invalid minimum bond distance entered! Minimum bond distance must be greater than zero!")
     bonds = {}
     num_atoms = len(coordinates)
 
@@ -260,8 +262,24 @@ atom_colors = {
     "Br": "#F4A460",
     "S": "yellow",
 }
-
-
+def calculate_molecular_mass(symbols):
+    """Calculate the mass of a molecule.
+    
+    Parameters
+    ----------
+    symbols : list
+        A list of elements.
+    
+    Returns
+    -------
+    mass : float
+        The mass of the molecule
+    """
+    mass = 0
+    for atom in symbols:
+        mass += atomic_weights[atom]
+    
+    return mass
 if __name__ == "__main__":
     # Do something if this file is invoked on its own
     print(canvas())

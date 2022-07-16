@@ -5,7 +5,12 @@ dependencies:
   - python
   - pip
 
+    # Package depends
+  - numpy
+  - matplotlib
 
-  # Pip-only installs
+
+
+    # Pip-only installs
   - pip:
-
+    - sphinx-autoapi

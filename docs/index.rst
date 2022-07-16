@@ -5,6 +5,7 @@
 
 Welcome to CVQE's documentation!
 =========================================================
+CVQE is a simple python tool to test pulse-level variational quantum eigensolver algorithm for molecular simulations.
 
 .. toctree::
    :maxdepth: 2

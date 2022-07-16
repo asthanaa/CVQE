@@ -5,3 +5,4 @@ API Documentation
    :toctree: autosummary
 
    CVQE.canvas
+   CVQE.calculate_distance

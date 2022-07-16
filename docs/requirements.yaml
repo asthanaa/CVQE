@@ -9,8 +9,6 @@ dependencies:
   - numpy
   - matplotlib
 
-
-
     # Pip-only installs
   - pip:
     - sphinx-autoapi
